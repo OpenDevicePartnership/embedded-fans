@@ -1,4 +1,26 @@
 
 # cargo-vet audits file
 
-[audits]
+[[audits.proc-macro2]]
+who = "Jerry Xie <jerryxie@microsoft.com>"
+criteria = "safe-to-deploy"
+delta = "1.0.94 -> 1.0.95"
+notes = "Delta: SourceFile removed, replaced by Span::file(). No unsafe. Assisted-by: copilot-cli:claude-opus-4.6"
+
+[[audits.syn]]
+who = "Jerry Xie <jerryxie@microsoft.com>"
+criteria = "safe-to-deploy"
+delta = "2.0.109 -> 2.0.104"
+notes = "Downgrade delta: const trait bound parsing changes. No new unsafe. Assisted-by: copilot-cli:claude-opus-4.6"
+
+[[audits.thiserror]]
+who = "Jerry Xie <jerryxie@microsoft.com>"
+criteria = "safe-to-deploy"
+delta = "2.0.17 -> 2.0.12"
+notes = "Downgrade delta: build.rs generates versioned __private module. No new unsafe. Assisted-by: copilot-cli:claude-opus-4.6"
+
+[[audits.thiserror-impl]]
+who = "Jerry Xie <jerryxie@microsoft.com>"
+criteria = "safe-to-deploy"
+delta = "2.0.17 -> 2.0.12"
+notes = "Downgrade delta: __private module refactor. No unsafe. Assisted-by: copilot-cli:claude-opus-4.6"
