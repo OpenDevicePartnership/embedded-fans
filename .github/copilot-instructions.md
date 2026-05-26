@@ -1,3 +1,8 @@
+> **Note:** See [`AGENTS.md`](../AGENTS.md) at the repository root for the
+> full AI-agent guide (workspace layout, public API contract, required CI
+> commands, and pilot-specific notes). The rules below remain authoritative
+> for commit-message formatting and AI attribution.
+
 # Copilot Instructions
 
 ## Commit Messages
