@@ -134,3 +134,22 @@ jobs:
           toolchain: ${{ matrix.msrv }}
       - name: cargo +${{ matrix.msrv }} check
         run: cargo check --locked
+
+  deny:
+    # cargo-deny checks licenses, advisories, sources, and bans for
+    # our dependencies.
+    runs-on: ubuntu-latest
+    name: ubuntu / stable / deny
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Install stable
+        uses: dtolnay/rust-toolchain@stable
+      - name: cargo install cargo-deny
+        uses: EmbarkStudios/cargo-deny-action@v2
+        with:
+          log-level: warn
+          manifest-path: ./Cargo.toml
+          command: check
+          arguments: --all-features --locked
