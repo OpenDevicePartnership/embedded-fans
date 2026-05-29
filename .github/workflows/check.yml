@@ -141,7 +141,7 @@ jobs:
     runs-on: ubuntu-latest
     name: ubuntu / stable / deny
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           submodules: true
       - name: Install stable
